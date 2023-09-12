@@ -1,0 +1,83 @@
+﻿@model List<CRUD_MVC.Models.Domain.Category>
+
+
+<div class="container bg-secondary bg-opacity-10 py-4">
+
+
+    <h1 class="text-center">Show all Catgories List</h1>
+
+</div>
+
+
+
+
+@if (TempData["success"] != null)
+{
+    <h2 class="text-center text-danger">@TempData["success"]</h2>
+}
+
+
+<div class="container py-4">
+
+    <a class="btn btn-outline-dark float-end" asp-action="Add">Add Category</a>
+
+</div>
+
+
+
+<div class="container py-3">
+
+
+    <table class="table">
+       
+        <thead>
+
+            <tr>
+                <th>Id</th>
+                <th>Category</th>
+                <th>Update</th>
+                <th>Delete</th>
+
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+
+            @foreach(var getList  in Model)
+            {
+
+
+                <tr>
+
+                    <th scope="row">@getList.Id</th>
+
+                    <td>@getList.category</td>
+
+                    <td> <a class="btn btn-dark" asp-action="Edit" asp-route-id="@getList.Id">Update</a></td>
+
+                    <td> <a class="btn btn-danger" asp-action="Delete" asp-route-id="@getList.Id">Delete</a></td>
+
+                </tr>
+
+
+
+            }
+            
+
+
+
+
+        </tbody>
+
+
+
+
+    </table>
+
+
+
+
+</div>

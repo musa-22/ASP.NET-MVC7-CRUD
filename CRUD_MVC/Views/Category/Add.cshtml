@@ -1,0 +1,35 @@
+﻿@model CRUD_MVC.Models.ViewModels.AddCategoryRequest
+
+
+<div class="container bg-secondary bg-opacity-10 py-4">
+
+
+    <h1 class="text-center">Add Categories</h1>
+
+</div>
+
+
+<div class="container">
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label class=" lb col-form-label ">Title</label>
+            <input class="form-control" asp-for="category" />
+            <span class="text-danger" asp-validation-for="category"></span>
+        </div>
+
+
+
+        <div class="mb-3">
+            <button class="btn btn-dark">Add Category</button>
+        </div>
+
+
+    </form>
+
+   
+
+
+</div>
+

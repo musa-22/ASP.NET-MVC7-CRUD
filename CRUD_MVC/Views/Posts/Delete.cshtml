@@ -1,0 +1,56 @@
+﻿@model CRUD_MVC.Models.Domain.Post
+
+
+
+
+@if (TempData["success"] != null)
+{
+    <h2 class="text-center text-danger">@TempData["success"]</h2>
+}
+
+<div class="container bg-secondary bg-opacity-10 py-4">
+
+
+    <h1 class="text-center">Add Post</h1>
+
+</div>
+
+
+<div class="container">
+
+
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="mb-3">
+
+            <label class="col-form-label" > Title</label>
+
+            <input type="text" disabled class="form-control mb-2" asp-for="Title" />
+
+
+            <label class="col-form-label">Upload - Image</label>
+
+            <input type="file" name="formFile" disabled class="form-control mb-2" asp-for="imageUrl" accept="image/*" />
+
+
+            <label class="col-form-label">Post</label>
+
+            <textarea type="text" class="form-control mb-2 " disabled rows="5" asp-for="Description"></textarea>
+
+        </div>
+
+        
+
+
+        <div class="mb-3">
+
+            <button class="btn btn-dark">Add-Post</button>
+
+
+        </div>
+
+    </form>
+
+
+</div>
